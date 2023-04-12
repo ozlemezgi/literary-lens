@@ -23,6 +23,7 @@ html{
     font-size: 75.5% ;
 }
 
+/* main component start */
 .header{
     width: 100%;
     height: 500px;
@@ -34,9 +35,12 @@ html{
 }
 
 
-
 .row1 {
   position: relative;
+}
+
+.row1 img {
+   border-radius: 5px;
 }
 
 .row1 h2 {
@@ -52,10 +56,6 @@ html{
   
 }
 
-.row1 img {
-       border-radius: 5px;
-
-}
 .row2{
     position: relative;
     top:10px;
@@ -96,3 +96,95 @@ html{
     font-size: 1.2rem;
     color: var(--primary-color);
 }
+
+/* responsivity start*/
+@media only screen and (max-width: 1024px) {
+  .header {
+    height: auto;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    padding: 50px 0;
+  }
+
+  .row1 {
+    margin-bottom: 30px;
+  }
+
+  .row1 h2 {
+    font-size: 2rem;
+  }
+
+  .row1 img {
+    width: 100%;
+    height: auto;
+  }
+
+  .row2 {
+    margin-bottom: 30px;
+    left: 0;
+    text-align: center;
+  }
+
+  .search {
+    display: block;
+    margin: 0 auto;
+    margin-top: 20px;
+  }
+
+  .search input[type="text"] {
+    width: 100%;
+    max-width: 300px;
+  }
+}
+
+/* card component start */
+.container{
+    width: 65%;
+    margin: 0 auto;
+    margin-top: 25px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(200px,0.5fr));
+    grid-gap:20px;
+    box-sizing: border-box;
+}
+
+.card{
+    background-color: rgb(246, 238, 238);
+    border-radius: 1rem;
+    padding: 0.5rem;
+    margin-bottom: 10px;
+    box-shadow: 0 5px 5px rgba(245, 155, 70, 0.5);
+    transition: .5s;
+    text-align: center;
+    position: relative;
+}
+
+.card img{
+    width: 170px;
+    height: 200px;
+    border-radius: 1rem 1rem 0 0;
+}
+
+.card .bottom{
+    display: flex;
+    flex-direction: column;
+}
+
+.card .bottom .title {
+    font-size: 14px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+.card .bottom .author{
+   font-size: 14px;
+    margin-bottom: 12px;
+    margin-top: 12px;
+}
+
+.card hr {
+    margin: 0 auto;
+    width: 60%;
+}
+
