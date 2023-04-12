@@ -1,0 +1,98 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap'); */
+@import url('https://fonts.googleapis.com/css2?family=Lobster+Two:ital@1&display=swap');
+
+
+*{
+    padding: 0;
+    margin: 0;
+    font-family: 'Nanum Myeongjo', serif;
+}
+
+:root{
+    --primary-color:rgb(255, 237, 222);
+    --secondary-color:rgb(101, 94, 70);
+}
+
+body{
+    background-color: var(--primary-color);
+}
+
+html{
+    font-size: 75.5% ;
+}
+
+.header{
+    width: 100%;
+    height: 500px;
+    color:var(--secondary-color);
+    box-shadow: 0 5px 10px var(--secondary-color);
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+
+
+.row1 {
+  position: relative;
+}
+
+.row1 h2 {
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 3rem;
+  text-align: center;
+  /* font-family: 'Dancing Script', cursive; */
+  font-family: 'Lobster Two', cursive;
+  font-size: 30px;
+  
+}
+
+.row1 img {
+       border-radius: 5px;
+
+}
+.row2{
+    position: relative;
+    top:10px;
+    left: 100px;
+    text-align: center;
+} 
+.row2 h2 {
+    font-size: 3rem;
+    margin-top: 20px;
+    margin-bottom: 15px;
+} 
+
+
+.search {
+    display: inline-block;
+    margin-top: 20px;
+}
+
+.search input[type="text"] {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    width: 400px;
+}
+
+.search button {
+    padding: 10px 15px;
+    background-color: var(--secondary-color);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+.search button i {
+    font-size: 1.2rem;
+    color: var(--primary-color);
+}
