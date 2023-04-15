@@ -11,12 +11,19 @@ function Main() {
   const searchBook = (evt) => {
     axios
       .get(
-        "https://www.googleapis.com/books/v1/volumes?q='+ezgi+'&maxResults=40&key=AIzaSyCPwNMiuqw7q5m4d5edr-x8e8f28V6-Rn4"
+        `https://www.googleapis.com/books/v1/volumes?q=${search}&maxResults=40&key=AIzaSyCPwNMiuqw7q5m4d5edr-x8e8f28V6-Rn4`
       )
       // Set the book data state to the response data
       .then((res) => setData(res.data.items))
       .catch((err) => console.log(err));
   };
+
+   const handleKeyDown = (event) => {
+     if (event.key === "Enter") {
+       searchBook();
+     }
+   };
+
   return (
     <>
       {/* Header section start*/}
@@ -31,10 +38,10 @@ function Main() {
           <h2>Literary Lens</h2>
           {/* Search bar start */}
           <div className="search">
-            //TODO:Performing a search when the enter key is pressed.
             <input
               value={search}
               onChange={(e) => setSearch(e.target.value)}
+              onKeyDown={handleKeyDown}
               type="text"
               placeholder="Enter your book name"
             />

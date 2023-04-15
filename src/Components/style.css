@@ -59,7 +59,7 @@ html{
 .row2{
     position: relative;
     top:10px;
-    left: 100px;
+    left: 10px; 
     text-align: center;
 } 
 .row2 h2 {
@@ -160,6 +160,11 @@ html{
     position: relative;
 }
 
+.card:hover{
+    transform: scale(0.9);
+    background-color:rgba(223, 199, 166, 0.5) ;
+}
+
 .card img{
     width: 170px;
     height: 200px;
@@ -188,3 +193,75 @@ html{
     width: 60%;
 }
 
+.overlay{
+    min-height: 100vh;
+    width: 100%;
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    /* background: linear-gradient(rgba(255, 237, 222, 0.1),rgba(112, 107, 107, 0.3)); */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.overlay-inner{
+    background: white;
+    width: 700px;
+    height: 550px;
+    padding: 1.5rem;
+    position: relative;
+    box-sizing: border-box;
+    overflow: hidden;
+    font-size: 1.3rem;
+}
+
+.overlay-inner .close{
+    position: absolute;
+    top:1rem;
+    right:1rem;
+    outline: none;
+    border: none;
+    font-size: 17px;
+    background-color: transparent;
+}
+
+.overlay-inner .inner-box{
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+}
+
+.overlay-inner .inner-box img{
+    margin-right:10px ;
+    width: 150px;
+    height: 200px;
+}
+
+.overlay-inner .inner-box h3{
+    margin-top: 10px;
+    color: #896241;
+}
+
+.overlay-inner .inner-box h4{
+        color: #896241;
+}
+
+.overlay-inner .inner-box button{
+    outline: none;
+    border: none;
+    width: 100px;
+    border-radius: 5px;
+    background-color:#896241;
+    color: white;
+    font-weight: bold;
+    padding: 0.3rem 0.5rem;
+}
+
+.overlay-inner .description{
+    margin-top: 2rem;
+    text-align: justify;
+    font-size: 13px;
+}
