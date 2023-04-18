@@ -18,10 +18,17 @@ function Card({book}) {
             item.volumeInfo.imageLinks.smallThumbnail;
           let author = item.volumeInfo.authors;
           // If the book has a thumbnail image and author information, render a Card component
-          if (thumbnail != undefined && author != undefined) {
+          if (thumbnail !== undefined && author !== undefined) {
             return (
               <>
-                <div className="card" onClick={()=>{setShow(true);setItem(item)}}>
+                <div
+                  key={item.id}
+                  className="card"
+                  onClick={() => {
+                    setShow(true);
+                    setItem(item);
+                  }}
+                >
                   <img src={thumbnail} alt="" />
                   <div className="bottom">
                     <h3 className="title">{item.volumeInfo.title}</h3>
@@ -29,10 +36,15 @@ function Card({book}) {
                     <p className="author">{author}</p>
                   </div>
                 </div>
-                <Modal show={show} item={bookItem} onClose={()=>setShow(false)}/>
+                <Modal
+                  show={show}
+                  item={bookItem}
+                  onClose={() => setShow(false)}
+                />
               </>
             );
           }
+           return null;
         })
     }
     </>
