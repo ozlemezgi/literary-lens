@@ -6,6 +6,8 @@ function Main() {
   // Set up state for search input and book data
   const [search, setSearch] = useState("");
   const [bookData, setData] = useState([]);
+  const [bookIndex, setBookIndex] = useState(7); // initialize with 7 to show first 7 books
+  const [showMoreButton, setShowMoreButton] = useState(true); // show more button initially
 
   // Function to search for books using Google Books API
   const searchBook = (evt) => {
@@ -18,11 +20,15 @@ function Main() {
       .catch((err) => console.log(err));
   };
 
-   const handleKeyDown = (event) => {
-     if (event.key === "Enter") {
-       searchBook();
-     }
+   const handleMoreClick = () => {
+     setBookIndex(bookIndex + 7); // increment book index by 7
    };
+
+  const handleKeyDown = (event) => {
+    if (event.key === "Enter") {
+      searchBook();
+    }
+  };
 
   return (
     <>
@@ -53,7 +59,14 @@ function Main() {
         </div>
       </div>
       {/* Container for book cards start */}
-      <div className="container">{<Card book={bookData} />}</div>
+      <div className="container">
+        {<Card book={bookData.slice(0, bookIndex)} />}
+        {bookData.length > bookIndex && showMoreButton && (
+          <button className="more-button" onClick={handleMoreClick}>
+            More
+          </button>
+        )}
+      </div>
     </>
   );
 }

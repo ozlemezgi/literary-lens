@@ -176,6 +176,7 @@ html{
     text-align: center;
     position: relative;
     font-family: 'Open Sans', sans-serif;
+    cursor: pointer;
 
 
 }
@@ -302,4 +303,17 @@ html{
     margin-top: 2rem;
     text-align: justify;
     font-size: 13px;
+}
+
+.more-button {
+background-color: var(--secondary-color);
+color: var(--primary-color);
+border: none;
+border-radius: 5px;
+padding: 10px ;
+cursor: pointer;
+margin-top: 0px;
+font-family: 'Open Sans', sans-serif;
+font-size: 1.5rem;
+ height: 50px;
 }
